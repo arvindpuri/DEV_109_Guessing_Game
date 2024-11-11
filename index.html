@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Tiger Puri">
+  <meta name="description" content="Coding Assignment 6">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Tiger Puri Bear Ninja Hunter</title>
+</head>
+
+<body>
+  <h1>Tiger Puri Bear-Ninja-Hunter</h1><br>
+  <p id="displaytext_1">Replace this content with scripted content</p>
+  <p id="displaytext_2">Replace this content with scripted content</p>
+  <p id="displaytext_3">Replace this content with scripted content</p>
+
+  
+
+    <script type="text/javascript">
+
+      //    Computer choice is hardcoded to "Bear"
+
+      const computerchoice = "Bear";
+
+      //    Present a text field to gather user input.
+      //    Store the user's input in a variable.
+
+      
+
+      let playername = prompt(`Welcome to Bear Hunter Ninja! Please enter your name to get started:`);
+
+      //    Put together messages for the players that combine text and the values of the variables from the user input (concatenation).
+
+     // let response = `Hi ${playername}, Let's Play`;
+
+      alert(`Hi ${playername}, Let's Play`);
+
+      let playerchoice = prompt('Who are you: Bear, Ninja or Hunter?');
+
+      //    Output the concatenated strings using two (2) different output methods.
+
+      console.log('The player entered: ' + playerchoice);
+      console.log('The computer chose: ' + computerchoice);
+
+      document.getElementById('displaytext_1').innerHTML = `${playername}, You chose ${playerchoice}!`;
+      document.getElementById('displaytext_2').innerHTML = `The computer chose ${computerchoice}!`;
+
+      switch (playerchoice) {
+
+        // Here we evaluate the conditions if the computer chooses Bear 
+        case 'Bear': {
+          switch (computerchoice) {
+          case 'Bear':
+            console.log(`It's a Tie!`);
+            document.getElementById('displaytext_3').innerHTML = `It's a Tie!`;
+            break;
+          case 'Ninja':
+            console.log(`You win!`);
+            document.getElementById('displaytext_3').innerHTML = `You win!`;
+            break;
+          case 'Hunter':
+            console.log(`The computer has won!`);
+            document.getElementById('displaytext_3').innerHTML = `The computer has won!`;
+            break;
+          default:
+            console.log(`Error, please try again.`);
+            document.getElementById('displaytext_3').innerHTML = `Error, please try again.`;
+          }
+        }
+        break;
+
+        // Here we evaluate the conditions if the computer chooses Ninja 
+
+
+        case 'Ninja': {
+          switch (computerchoice) {
+          case 'Bear':
+            console.log(`The computer has won!`);
+            document.getElementById('displaytext_3').innerHTML = `The computer has won!`;
+            break;
+          case 'Ninja':
+            console.log(`It's a Tie!`);
+            document.getElementById('displaytext_3').innerHTML = `It's a Tie!`;
+            break;
+          case 'Hunter':
+            console.log(`You win!`);
+            document.getElementById('displaytext_3').innerHTML = `You win!`;
+            break;
+          default:
+            console.log(`Error, please try again.`);
+            document.getElementById('displaytext_3').innerHTML = `Error, please try again.`;
+          }
+        }
+        break;    
+
+        // Here we evaluate the conditions if the computer chooses Hunter 
+
+
+        case 'Hunter': {
+          switch (computerchoice) {
+          case 'Bear':
+            console.log(`You win!`);
+            document.getElementById('displaytext_3').innerHTML = `You win!`;
+            break;
+          case 'Ninja':
+            console.log(`The computer has won!`);
+            document.getElementById('displaytext_3').innerHTML = `The computer has won!`;
+            break;
+          case 'Hunter':
+            console.log(`It's a Tie!`);
+            document.getElementById('displaytext_3').innerHTML = `It's a Tie!`;
+            break;
+          default:
+            console.log(`Error, please try again.`);
+            document.getElementById('displaytext_3').innerHTML = `Error, please try again.`;
+          }
+        }
+        break;
+
+          // Here we evaluate the conditions if the computer doesn't make a choice and the user makes an invalid entry 
+
+
+        default:
+        if (playerchoice != null) {
+          console.log(`Invalid input, please try again.`);
+          document.getElementById('displaytext_3').innerHTML = `Invalid input, please try again.`;
+        } else {
+          console.log(`Error, please try again.`);
+          document.getElementById('displaytext_3').innerHTML = `Error, please try again.`;
+        }
+      }
+
+    </script>
+
+
+</body>
